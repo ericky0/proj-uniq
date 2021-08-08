@@ -11,7 +11,7 @@ ul{
 }
 
 :root {
-  --hue: 259;
+  --hue: 159;
   /* HSL color mode */
   --base-color: hsl(var(--hue) 36 57% );
   --base-color-second: hsl(var(--hue) 65% 45% );
@@ -101,6 +101,7 @@ header nav a {
   font-size: 1.7rem;
   font-weight: 700;
   color: var(--base-color);
+  transition: 0.3s;
 }
 
 header nav a span {
@@ -123,10 +124,29 @@ nav.show .menu{
   place-content: center;
 }
 
-nav.show .menu ul{
-  
+nav.show .menu li a{
+  position: relative;
 }
 
+nav.show .menu li a::after{
+  content: '';
+  width: 0%;
+  height: 2px;
+  background-color: var(--base-color-second);
+  position: absolute;
+  left: 0;
+  bottom: -1rem;
+  transition: 0.3s;
+}
+
+nav.show .menu li a:hover::after{
+  width: 150%;
+  left: -25%;
+}
+
+nav.show .menu li a:hover{
+  color: var(--base-color-second);
+}
 
 
 
