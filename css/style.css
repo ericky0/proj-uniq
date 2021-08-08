@@ -92,11 +92,6 @@ header nav {
   height: 5rem;
 }
 
-header nav .menu{
-  opacity: 0;
-  visibility: hidden;
-}
-
 header nav a {
   font-size: 1.7rem;
   font-weight: 700;
@@ -106,6 +101,43 @@ header nav a {
 
 header nav a span {
   color: var(--base-color-second);
+}
+
+/*=============== nav-menu ===========*/
+
+header nav .menu{
+  opacity: 0;
+  visibility: hidden;
+}
+
+nav .menu li a::after{
+  content: '';
+  width: 0%;
+  height: 2px;
+  background-color: var(--base-color-second);
+  position: absolute;
+  left: 0;
+  bottom: -1rem;
+  transition: 0.3s;
+}
+
+nav .menu li a:hover::after{
+  width: 150%;
+  left: -25%;
+}
+
+.icon-cross{
+  display: none;
+}
+
+.icon-menu{
+  
+}
+
+
+.toggle{
+  color: var(--base-color-second);
+  font-size: 32px;
 }
 
 /*============= show-menu ================= */
@@ -128,25 +160,16 @@ nav.show .menu li a{
   position: relative;
 }
 
-nav.show .menu li a::after{
-  content: '';
-  width: 0%;
-  height: 2px;
-  background-color: var(--base-color-second);
-  position: absolute;
-  left: 0;
-  bottom: -1rem;
-  transition: 0.3s;
-}
-
-nav.show .menu li a:hover::after{
-  width: 150%;
-  left: -25%;
-}
 
 nav.show .menu li a:hover{
   color: var(--base-color-second);
 }
+
+nav.show .icon-cross {
+  display: block;
+  position: absolute;
+  right: 1.5rem;
+} 
 
 
 
