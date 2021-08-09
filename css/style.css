@@ -4,6 +4,7 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  
 }
 
 ul{
@@ -11,8 +12,8 @@ ul{
 }
 
 p{
-  color: var(--text-color);
   font-size: 1.1rem;
+  color: var(--text-color);
 }
 
 img {
@@ -21,7 +22,7 @@ img {
 }
 
 :root {
-  --hue: 180;
+  --hue: 159;
   /* HSL color mode */
   --base-color: hsl(var(--hue) 36 57% );
   --base-color-second: hsl(var(--hue) 65% 45% );
@@ -271,18 +272,19 @@ nav.show .icon-cross {
   margin-bottom: 2rem;
 }
 
-#home .text .button{
+.button{
   display: inline-flex;
   height: 3.5rem;
   padding: 0 2rem;
   border-radius: 0.35rem;
   align-items: center;
   color: var(--text-color-light);
+  fill: var(--text-color-light);
   background-color: var(--base-color-second);
   transition: background-color 0.25s;
 }
 
-#home .text .button:hover{
+.button:hover{
   background-color: var(--base-color-alt);
 }
 /*============== about ===================*/
@@ -353,3 +355,108 @@ nav.show .icon-cross {
 #services .single-card p{
   font-size: 1.3rem;
 }
+
+/*================= testimonials ===============*/
+
+#testimonials{
+  background-color: white;
+}
+
+#testimonials .container{
+  margin: 0;
+}
+
+
+#testimonials h2{
+  margin: 0 1.5rem;
+}
+
+#testimonials h2 > span{
+  color: var(--base-color-second);
+}
+
+#testimonials blockquote {
+  padding: 1.5rem;
+  box-shadow: 0px 0px 7px 2px rgba(0, 0, 0, 0.15);
+  border-radius: 0.2rem 0.2rem 0rem 0rem;
+}
+
+#testimonials blockquote p {
+  position: relative;
+  text-indent: 2rem;
+  font-size: 1rem;
+  color: var(--title-color);
+}
+
+#testimonials blockquote span {
+  color: var(--base-color-second);
+  font: 700 3.5rem serif;
+  position: absolute;
+  top: -1rem;
+  left: -2.1rem;
+}
+
+#testimonials blockquote cite{
+  margin-top: 1rem;
+  display: flex;
+  align-items: center;
+  font-style: normal;
+  font-size: 1.1rem;
+  color: var(--title-color);
+}
+
+#testimonials blockquote cite img{
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 1.75rem;
+  margin-right: 1rem;
+}
+
+/* swiper */
+#testimonials .swiper-slide{
+  height: auto;
+  padding: 4rem 1rem 3rem 1rem;
+}
+
+#testimonials .swiper-pagination-bullet{
+  width: 0.7rem;
+  height: 0.7rem;
+}
+
+#testimonials .swiper-pagination-bullet-active{
+  background-color: var(--base-color-alt);
+}
+
+/*================= contact ===============*/
+/* icon whatsapp is isolated from the others icons in library icomoon. */
+#contact .whatsapp{
+  margin-right: 0.825rem;
+}
+
+#contact .button{
+  margin: 1.5rem 0rem 3.5rem 0rem;
+}
+
+#contact ul{
+  gap: 1.5rem;
+}
+
+#contact ul li{
+  color: var(--text-color);
+  display: flex;
+  align-items: center;
+}
+
+#contact ul li i{
+  
+  margin-right: 0.5rem;
+  font-size: 1.5rem;
+  color: var(--base-color-second);
+}
+
+#contact ul li:nth-child(1) i{
+  transform: rotate(100deg);
+}
+
+
+
