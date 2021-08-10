@@ -22,7 +22,7 @@ img {
 }
 
 :root {
-  --hue: 159;
+  --hue: 200;
   /* HSL color mode */
   --base-color: hsl(var(--hue) 36 57% );
   --base-color-second: hsl(var(--hue) 65% 45% );
