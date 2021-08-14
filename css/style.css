@@ -22,7 +22,7 @@ img {
 }
 
 :root {
-  --hue: 200;
+  --hue: 159;
   /* HSL color mode */
   --base-color: hsl(var(--hue) 36 57% );
   --base-color-second: hsl(var(--hue) 65% 45% );
@@ -123,7 +123,7 @@ header nav {
   height: 5rem;
 }
 
-header nav a {
+header nav a, footer .text a {
   font-size: 1.7rem;
   font-weight: 700;
   color: var(--base-color);
@@ -202,6 +202,7 @@ nav.show .menu li a:hover{
 }
 
 .icon-menu {
+  cursor: pointer;
   position: relative;
   opacity: 1;
   transition: 0.5s;
@@ -214,7 +215,8 @@ nav.show .icon-menu{
 }
 
 
-nav .icon-cross{
+nav .icon-x{
+  cursor: pointer;
   opacity: 0;
   position: absolute;
   right: 1.5rem;
@@ -222,7 +224,7 @@ nav .icon-cross{
   right: 5rem;
 }
 
-nav.show .icon-cross {
+nav.show .icon-x {
   opacity: 1;
   display: block;
   right: 1.5rem; 
@@ -339,9 +341,9 @@ nav.show .icon-cross {
   gap: 4rem;
 }
 
-#services .icon-graduation-cap {
+#services .icon-card {
   color: var(--base-color-second);
-  font-size: 8rem;
+  font-size: 4rem;
 }
 
 #services .single-card{
@@ -429,8 +431,10 @@ nav.show .icon-cross {
 
 /*================= contact ===============*/
 /* icon whatsapp is isolated from the others icons in library icomoon. */
-#contact .whatsapp{
+#contact .icon-whatsapp{
   margin-right: 0.825rem;
+  font-size: 1.5rem;
+  color: var(--base-color);
 }
 
 #contact .button{
@@ -444,7 +448,6 @@ nav.show .icon-cross {
 #contact ul li{
   color: var(--text-color);
   display: flex;
-  align-items: center;
 }
 
 #contact ul li i{
@@ -455,8 +458,62 @@ nav.show .icon-cross {
 }
 
 #contact ul li:nth-child(1) i{
-  transform: rotate(100deg);
+  transform: rotate(15deg);
 }
 
+/*================= footer ==================*/
 
+footer {
+  background-color: var(--base-color-alt);
+}
+
+footer .text span{
+  color: var(--text-color-light);
+}
+
+footer .text a{
+  display: inline-block;
+  margin-bottom: 1.2rem;
+  font-size: 1.5rem;
+}
+
+footer .text p{
+  color: var(--text-color-light);
+}
+
+footer .social-icons i{
+  display: inline-block;
+  font-size: 1.625rem;
+  color: var(--text-color-light);
+  margin-right: 1rem;
+  transition: 0.3s;
+}
+
+footer .social-icons i:hover{
+  font-size: 1.725rem; 
+  transform: translateY(-7px);
+}
+
+/*============= arrow up ===========*/
+
+.icon-arrow-up{
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  color: var(--body-color);
+  background-color: var(--base-color-alt);
+  font-size: 1.5rem;
+  padding: 0.5rem;
+  border-radius: 100%;
+  transform: translateY(150%);
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.3s;
+}
+
+.icon-arrow-up.show{
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
 

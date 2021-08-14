@@ -13,16 +13,33 @@ links.forEach(element => {
   })  
 });
 
-const header = document.querySelector('#navbar');
-const navHeight = header.offsetHeight;
 
-window.addEventListener('scroll', ( ) => {
+function scrollNavbar () {
+  const header = document.querySelector('#navbar');
+  const navHeight = header.offsetHeight;
+
   if(window.scrollY >= navHeight){
     header.classList.add('scroll');
   }else{
     header.classList.remove('scroll');
   }
+}
+
+function backToTop () {
+  const backToTopShow = document.querySelector('.icon-arrow-up');
+
+  if(window.scrollY > 600){
+    backToTopShow.classList.add('show');
+  } else {
+    backToTopShow.classList.remove('show');
+  }
+}
+
+window.addEventListener('scroll', () => {
+  scrollNavbar();
+  backToTop();
 })
+
 
 // swiper //
 
