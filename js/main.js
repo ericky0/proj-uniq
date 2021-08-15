@@ -1,6 +1,11 @@
 const nav = document.querySelector('nav');
 const toggle = document.querySelectorAll('nav .toggle');
 const links = document.querySelectorAll('nav ul li a');
+
+
+
+// menu - toggle
+
 toggle.forEach(element => {
   element.addEventListener('click', () => {
     nav.classList.toggle('show');
@@ -13,10 +18,12 @@ links.forEach(element => {
   })  
 });
 
+// scrollNavbar
+
+const header = document.querySelector('#navbar');
+const navHeight = header.offsetHeight;
 
 function scrollNavbar () {
-  const header = document.querySelector('#navbar');
-  const navHeight = header.offsetHeight;
 
   if(window.scrollY >= navHeight){
     header.classList.add('scroll');
@@ -25,21 +32,17 @@ function scrollNavbar () {
   }
 }
 
-function backToTop () {
-  const backToTopShow = document.querySelector('.icon-arrow-up');
+// backToTopShow
 
+const backToTopShow = document.querySelector('.icon-arrow-up');
+
+function backToTop () {
   if(window.scrollY > 600){
     backToTopShow.classList.add('show');
   } else {
     backToTopShow.classList.remove('show');
   }
 }
-
-window.addEventListener('scroll', () => {
-  scrollNavbar();
-  backToTop();
-})
-
 
 // swiper //
 
@@ -49,7 +52,13 @@ const swiper = new Swiper('.swiper-container', {
     el: '.swiper-pagination'
   },
   mousewheel: true,
-  keyboard: true
+  keyboard: true,
+  breakpoints: {
+    767: {
+      slidesPerView: 2,
+      setWrapperSize: true
+    }
+  }
 });
 
 // scrollReveal
@@ -69,3 +78,41 @@ scrollReveal.reveal(
    footer a
   `
   , {interval: 100});
+
+
+
+// active checkpoint menu
+
+const sections = document.querySelectorAll('main section[id]');
+
+function activeMenuAtCurrentHeight(){
+  const checkpoint = window.pageYOffset + (window.innerHeight / 8) * 4;
+
+  for (const section of sections){
+    const sectionTop = section.offsetTop;
+    const sectionHeight = section.offsetHeight;
+    const sectionId = section.getAttribute('id');
+
+    const checkpointStart = checkpoint >= sectionTop;
+    const checkpointEnd = checkpoint <=sectionTop + sectionHeight;
+
+    if(checkpointStart && checkpointEnd){
+      document.querySelector('nav ul li a[href*=' + sectionId + ']').classList.add('active');
+    } else{
+      document.querySelector('nav ul li a[href*=' + sectionId + ']').classList.remove('active');
+    }
+  }
+}
+
+
+
+
+
+
+// EventListeners
+
+  window.addEventListener('scroll', () => {
+    scrollNavbar();
+    backToTop();
+    activeMenuAtCurrentHeight();
+  })
