@@ -608,6 +608,11 @@ footer .social-icons i:hover{
     max-width: 24rem;
   }
 
+  #home .image img{
+    width: 120%;
+    right: 20%;
+  }
+
   #home .image{
     order: 1;
   }
@@ -687,4 +692,42 @@ footer .social-icons i:hover{
   footer .text p{
     margin-bottom: 10px;
   }
+}
+
+@media (min-width: 900px){
+  
+
+  /*============ home ==============*/
+  
+  #home .image{
+    position: relative;
+    width: 80%;
+    margin: 2rem auto;
+  }
+  
+  #home .image::before{
+    right: -5%;
+  }
+
+  /*============ about ==============*/
+
+  #about .container{
+    margin: 0 auto;
+  }
+
+  #about .image{
+    width: 80%;
+    margin: 2rem auto;
+  }
+  
+  #about .image img{
+    position: relative;
+    height: 100%;
+    z-index: 1;
+  }
+  
+  #about .image::before{
+    left: -10%;
+  }
+
 }
