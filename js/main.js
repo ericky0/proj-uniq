@@ -65,9 +65,7 @@ scrollReveal.reveal(
   `#home .image, #home .text,
    #about .image, #about .text,
    #services .text, #services .single-card,
-   #testimonials,
-   #contact .text
-   
-
+   #testimonials, #contact,
+   footer a
   `
   , {interval: 100});
